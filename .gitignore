@@ -50,3 +50,5 @@ examples/rast2d/SPRITES/
 examples/rast2d/WALLS/
 examples/rast2d/PICTURES/
 yzg.code-workspace
+
+.xmake/
