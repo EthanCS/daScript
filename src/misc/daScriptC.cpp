@@ -107,6 +107,10 @@ das_module_group * das_modulegroup_make () {
     return (das_module_group *) new ModuleGroup();
 }
 
+void das_modulegroup_add_module(das_module_group* lib, das_module* mod) {
+    ((ModuleGroup*)lib)->addModule((Module*)mod);
+}
+
 void das_modulegroup_release ( das_module_group * group ) {
     if ( group ) delete (ModuleGroup *) group;
 }
