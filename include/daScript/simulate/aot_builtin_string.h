@@ -108,7 +108,8 @@ namespace das {
         }
         *head++ = '}'; *head = 0;
         try {
-            auto result = fmt::format_to(buf, ffmt, value);
+            // auto result = fmt::format_to(buf, ffmt, value);
+            auto result = fmt::vformat_to(buf, ffmt, fmt::make_format_args(value));
             *result= 0;
             return context->allocateString(buf, uint32_t(result-buf), at);
         } catch (const std::exception & e) {
@@ -136,7 +137,8 @@ namespace das {
         }
         *head++ = '}'; *head = 0;
         try {
-            auto result = fmt::format_to(buf, ffmt, value);
+            //auto result = fmt::format_to(buf, ffmt, value);
+            auto result = fmt::vformat_to(buf, ffmt, fmt::make_format_args(value));
             *result = 0;
             writer.writeStr(buf, result - buf);
         } catch ( const std::exception & e ) {
